@@ -1,0 +1,457 @@
+﻿/*padding is inside the div and margin is outside the div*/
+/*padding adds twice to width of div*/
+/*classes can be used many times on page. div IDs only once*/
+/* generic styles */
+
+/* Hides from IE5-mac \*/
+
+* html #main_nav {height: 1%;}
+
+/* End hide from IE5-mac */
+
+body, input, td, select, textarea {
+
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 11px;
+line-height:16px;
+color: #666666;
+background-color: #FFFFFF;
+margin-top: 0px;
+margin-right: 0px;
+margin-left: 0px;
+
+}
+
+body {
+
+text-align:center;
+
+}
+
+h1, .h1title {
+	font-size: 24px;
+	margin: 0px;
+	padding: 0px;
+	color: #376DAA;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: -0.05em;
+	}
+
+h2, .h2title {
+
+font-family: Trebuchet MS, Geneva, Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight:bold;
+color:#666666;
+margin:0px;
+
+}
+
+h3, .h3title {font-size:11px;}
+
+.boldTitle
+{
+	font-weight: bold;
+}
+
+p {
+
+margin-top:0px;
+margin-bottom:10px;
+
+}
+
+hr {
+	font-size: 1pt;
+	width: 85%;
+	color: #376DAA;
+}
+
+div {
+
+margin:0px;
+padding:0px;
+text-align:left;
+
+}
+
+ul{
+
+margin:0px;
+
+}
+
+.padding
+{
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+/********************  Created Tag Styles ********************************/
+
+#container {
+
+position:relative;
+width: 770px;
+margin: auto;
+background-image: url(../images/bg_main.gif);
+background-repeat:repeat-y;
+
+}
+
+#masthead {
+
+width: 728px;
+height: 101px;
+padding-bottom:0px;
+padding-top:5px;
+margin-left:21px;
+margin-right:15px;
+margin-bottom:10px;
+/*background-image: url(../images/bg_masthead.gif);
+background-repeat: no-repeat;*/
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #EBE9ED;
+clear:both;
+
+}
+
+
+
+#mast_head_image {
+padding-left: 5px;
+height: 91px;
+float: left;
+
+}
+
+
+.mnTitle h2 {
+	background-color: #DBDDDE;
+	color:#807E7E;
+	font: bold 14px Geneva, Arial, Helvetica, sans-serif;
+	margin: 0 0 10px 0;
+	padding: 6px 12px;
+	letter-spacing: -0.05em;
+}
+
+
+
+#footer {
+line-height:10px;
+margin: auto;
+background-image: url(../images/bg_footer.gif);
+text-decoration: none;
+background-repeat: no-repeat;
+width: 708px;
+height: 40px;
+padding-top: 10px;
+padding-left: 41px;
+padding-right: 21px;
+font-size:9px;
+clear:both;
+
+}
+
+#side_nav {
+
+float:left;
+width: 200px;
+margin-right: 0px;
+
+}
+
+
+
+
+#main {
+
+padding-left: 20px;
+width: 501px;
+padding-top:0px;
+float:left;
+
+}
+
+#main_container {
+padding: 0px;
+padding-left:21px;
+margin: 0px;
+width: 728px;
+background-image: url(../images/vr2.gif);
+
+}
+
+.hr1 {
+
+clear:both;
+
+background-image: url(../images/hr1.gif);
+
+background-repeat:no-repeat;
+
+height: 10px;
+
+width:100%;
+
+}
+
+#control {
+
+width: 176px;
+padding-top: 10px;
+padding-right: 12px;
+padding-bottom: 20px;
+padding-left: 12px;
+
+}
+
+
+#control a:hover, #control  .selected{
+	background: #EBF5FB url(../images/menu_separator.gif) no-repeat center bottom;
+	color: #487BA2;
+	}
+
+
+
+#control  a {
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	padding-bottom: 2px;
+	padding-right: 5px;
+	text-indent: 10pt;
+	background-image:  url(../images/menu_separator.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	margin: 0px;
+	color: #6E97B6;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	width: 200px;
+	}
+
+
+
+#localnav {
+	
+	padding-bottom: 35px;
+	margin: 0px;
+	/*width: 50px;*/
+	background-image:  url(../images/menu_separator.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+
+#localnav a {
+	text-decoration: none;
+    display: block;
+    text-align: left;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    text-indent: 15pt;
+    background-image:  url(../pics/menu_separator.gif);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #E2E4DE;
+    margin: 0px;
+    color: #727272;
+    font-family: 'Trebuchet MS', Arial, sans-serif; 
+    letter-spacing: 0.045em;    
+    font-size: 10px;
+    width: 195px;
+}
+	
+#localnav a:hover, #localnav .selected{
+	background: #EBF5FB url(../images/nav_selected_bkgd.gif) no-repeat left bottom;
+	color: #487BA2;
+}
+
+.footer_text{float:left;}
+.footer_links{float:right; padding-right:15px;}
+
+/*------------------------------ contact / form pages styles -------------------------------*/
+
+.textfield, textarea, .login_field, .pass_field{
+
+border-color:#CCCCCC;
+border-style:solid;
+border-width:1px;
+margin-bottom:10px;
+
+}
+
+
+.textfield{
+
+width:200px;
+height:15px;
+
+}
+
+
+.textarea{
+
+width:260px;
+height:80px;
+
+}
+
+.contact_form{
+width:430px;
+margin-top:20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/************************** .NET Web Controls CSS and content styles   *************************************/
+.DataWebControlStyle
+{
+    font-size: small;
+}
+
+.HeaderStyle
+{
+    /*background-color: #376DAA;
+    color: White;
+    font-weight: bold;*/
+}
+
+.HeaderStyle th
+{
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-top: 10px;
+    vertical-align: top;
+    margin: 0px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.DirectoryHeaderTDStyle
+{
+	/** Blue Bold Title, transparent background, gold underline: nimda\webcontent-edit.aspx, nimda\wine-details.aspx ***/
+    border-bottom: solid 2px #d42020;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    color: Black;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 17px;
+    vertical-align: top;
+    margin: 0px;
+    color: #43536F;  /* Regeney Blue */
+}
+
+.AlternatingRowStyle
+{
+    /*background-color: #FFFFE0; light yellow*/
+}
+
+.SelectedRowStyle
+{
+    background-color: Yellow;
+}
+
+.RowStyle
+{
+	
+}
+
+.RowStyle td, .AlternatingRowStyle td
+{
+    /*background-image: url(../pics/vert_line.gif);
+    background-repeat: no-repeat;
+    background-position: right 15px;
+    border-bottom: solid thin #EBE9ED;*/
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-top: 17px;
+    vertical-align: top;
+    margin: 0px;
+    color: #646464;
+    font-weight: normal;
+    text-align: left;
+    font-family: 'Trebuchet MS', Arial, sans-serif;  
+}
+
+.GridFooterStyle td {
+    height:35px;
+    padding-left:5px;
+    background-color:#F5F5F5;
+    font-size: 11px;
+    color: #666666;
+    padding-right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: left;
+}
+
+.title
+{
+	font-size: 22px;
+	margin: 0px;
+	padding: 0px;
+	color: #376DAA;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: -0.05em;
+}
+
+.smallTitle
+{
+	margin: 0px;
+	padding: 0px;
+	color: #376DAA;
+	font-weight: normal;
+	letter-spacing: -0.05em;
+	font-size: 18px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.tinyGray
+{
+	color: #A9A9A9; /*dark gray */
+	font-size: x-small;
+}
+
+.brclear
+{
+     clear: both; 
+     height: 0; 
+     margin: 0;
+     font-size: 1px;
+     line-height: 0px;
+}
+
+.imgALeftStyle /* used in story.aspx */
+{
+	margin-right: 10px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 3px;
+}
+
+
+
+
+
+
+
+

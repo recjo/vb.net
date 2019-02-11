@@ -1,0 +1,59 @@
+<%@ Master Language="VB" CodeFile="Nimda.master.vb" Inherits="Nimda" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Nimda Administration</title>
+    <link href="~/styles/nimda.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="container">
+
+        <form id="form1" runat="server">
+			<!-- begin masthead -->
+            <div id="masthead"> 
+                <div id="mast_head_image">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/LA_logo.gif" Width="321" Height="41" />
+                </div> 
+             </div>
+             <!-- end masthead -->
+
+			<div id="main_container">
+                <!-- begin sidenav -->
+				<div id="side_nav"> 
+									
+				    <div id="lefty" class="control" runat="server">
+							   
+					    <div class="mnTitle"><h2>Control Panel </h2></div>
+                        <div class="hr1"></div>
+						<div id="localnav">
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="default.aspx">Home</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="nimda/webcontent.aspx">Web Content Manager</asp:HyperLink>
+						</div>
+                    </div>
+				</div> 
+                <!-- end sidenav -->
+
+                <!-- start main content -->
+				<div id="main">
+					<div class="mnTitle"><h2>Administration</h2></div>
+                    <div class="hr1"></div>
+                    <asp:contentplaceholder id="MainContent" runat="server">
+                        <!-- Page-specific content will go here... -->
+                    </asp:contentplaceholder>
+				</div>
+                <!-- end main content -->
+
+			</div>
+			
+            <!-- start footer -->
+            <br />
+            <div id="footer">
+                <p class="footer_text"><asp:Label ID="lblCopyright" runat="server" Text="Label" EnableViewState="False"></asp:Label></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

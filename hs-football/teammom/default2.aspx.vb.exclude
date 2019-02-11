@@ -1,0 +1,29 @@
+
+Partial Class teammom_default
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If HttpContext.Current.User.Identity.Name = "" Then Response.Redirect("~/login.aspx", False)
+
+        Page.Title = "Team Mom - " & HttpContext.Current.User.Identity.Name
+    End Sub
+
+    Protected Sub NewsletterSource_Selecting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs) Handles NewsletterSource.Selecting
+        e.InputParameters("league") = HttpContext.Current.User.Identity.Name
+    End Sub
+
+    Protected Sub NewsletterSource_Updating(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs) Handles NewsletterSource.Updating
+        e.InputParameters("league") = HttpContext.Current.User.Identity.Name
+    End Sub
+
+    Protected Sub GridView1_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GridView1.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            'Del link is in THIRD CELL (modify below if columns change)
+            'Del link (with edit link) is actually control 2 since "edit" is 0 and "invisible ctrl" between links is 1
+            Dim delButt As LinkButton = CType(e.Row.Cells(3).Controls(2), LinkButton)
+            If delButt.Text = "Delete" Then
+                delButt.OnClientClick = "return confirm('Do you really want to delete this item?')"
+            End If
+        End If
+    End Sub
+End Class

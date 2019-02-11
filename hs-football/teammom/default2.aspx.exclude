@@ -1,0 +1,47 @@
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="default.aspx.vb" Inherits="teammom_default" title="Untitled Page" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MenuContent" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+
+    <h2>Team Mom Announcement Page</h2>
+    
+    <asp:HyperLink ID="HyperLink1" runat="server">Change Message</asp:HyperLink>
+    
+    
+    
+    
+    
+    
+    
+    
+    <br /><br />
+    <hr style="color: #800000;" />
+    Subscribers to your Announcment Page<br /><br />
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="RecID" DataSourceID="NewsletterSource" PageSize="40" EmptyDataText="<br /><br />No subscribers found." ShowHeader="true">
+        <Columns>
+            <asp:BoundField DataField="ParentName" HeaderText="Parent Name" SortExpression="ParentName" />
+            <asp:BoundField DataField="ChildName" HeaderText="Child" SortExpression="ChildName" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" HeaderText="Action" HeaderStyle-HorizontalAlign="Center" />
+        </Columns>
+    </asp:GridView>
+    <asp:ObjectDataSource ID="NewsletterSource" runat="server" DeleteMethod="DeleteSubscriber" EnableViewState="false" 
+        InsertMethod="InsertSubscriber" 
+        SelectMethod="GetSubsByLeague" TypeName="NewsletterBLL" UpdateMethod="UpdateSubscriber">
+        <DeleteParameters>
+            <asp:Parameter Name="RecID" Type="Int32" />
+        </DeleteParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="league" Type="String" />
+            <asp:Parameter Name="parentname" Type="String" />
+            <asp:Parameter Name="childname" Type="String" />
+            <asp:Parameter Name="email" Type="String" />
+            <asp:Parameter Name="recid" Type="Int32" />
+        </UpdateParameters>
+        <SelectParameters>
+            <asp:Parameter Name="league" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    
+</asp:Content>
+

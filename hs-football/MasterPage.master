@@ -1,0 +1,113 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="styles/global.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:Literal ID="ltlMenuCode" runat="server" Text='<script language="JavaScript" type="text/javascript">loadMenus(1);</script>' Mode="PassThrough"></asp:Literal>
+    <div id="container_full">
+        <div id="container">
+            <div id="logo">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="http://www.losalpopwarner.com" Target="_blank" ImageUrl="images/LA_logo.gif" ToolTip="Los Alamitos Pop Warner Football" Width="321" Height="41" ></asp:HyperLink>
+            </div>
+            <div id="nav_area">
+                <div id="mainnav">
+                    <ul>
+                        <li id="about"><asp:HyperLink ID="nlnk1" runat="server" NavigateUrl="default.aspx"></asp:HyperLink></li>
+                        <li id="football" onmouseover="showMenu(football,6,23,null,'football')" onmouseout="startTimeout();"><asp:HyperLink ID="nlnk2" runat="server" NavigateUrl="football/default.aspx"></asp:HyperLink></li>
+                        <li id="cheer"><asp:HyperLink ID="nlnk3" runat="server" NavigateUrl="cheer/default.aspx"></asp:HyperLink></li>
+                        <li id="shop"><asp:HyperLink ID="nlnk4" runat="server" NavigateUrl="shop/default.aspx"></asp:HyperLink></li>
+                        <li id="teamnews" onmouseover="showMenu(teamnews,-20,23,null,'teamnews')" onmouseout="startTimeout();"><asp:HyperLink ID="nlnk5" runat="server" NavigateUrl="teamnews/default.aspx"></asp:HyperLink></li>
+                    </ul>
+	            </div><!-- mainnav -->
+            </div><!-- nav_area -->
+
+            <div id="masthead"> 
+                <div id="mast_head_image">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="images/masthead_image6.jpg" Width="720" Height="101" />
+                </div> 
+            </div><!-- end masthead -->
+
+			<div id="main_container"> 
+                <div id="side_nav">
+                    <div class="showcase">
+                        <p>
+                        <script type="text/javascript">
+                            document.write(lday + ", "  +lmonth + " " + date + ", " + year + " " + timeValue);
+                        </script>
+                        </p>
+                        <asp:contentplaceholder id="MenuContent" runat="server">
+                        </asp:contentplaceholder>
+                        <br />
+                    </div><!-- showcase -->
+                    
+                    <div class="news">
+                        <div id="banner">
+                            <asp:FormView ID="FormView4" runat="server" DataKeyNames="RecID" DataSourceID="WebContentDataSource4" EnableViewState="false">
+                                <ItemTemplate>
+                                    <p><asp:Label ID="PageTextLabel" runat="server" Text='<%# Eval("PageText") %>' EnableViewState="false"></asp:Label></p>
+                                </ItemTemplate>
+                            </asp:FormView>
+                        </div><!-- banner -->
+                        <div class="left">
+                            <asp:FormView ID="FormView5" runat="server" DataKeyNames="RecID" DataSourceID="WebContentDataSource5" EnableViewState="false">
+                                <ItemTemplate>
+                                    <p><asp:Label ID="PageTextLabel" runat="server" Text='<%# Eval("PageText") %>' EnableViewState="false"></asp:Label></p>
+                                </ItemTemplate>
+                            </asp:FormView>
+                        </div><!-- left -->
+                    </div><!-- news -->
+                    
+                    <div class="hr1"></div>
+                    
+                    <div class="homebanner_link">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="http://www.popwarner.com/" Target="_blank" ImageUrl="images/popwarnercheer.gif" Width="110" Height="84" ToolTip="Football & Cheer"></asp:HyperLink>
+                    </div>
+                    <div class="hr1"></div>
+                    
+                    <div class="homebanner_link">
+                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="http://www.wesconpopwarner.com/" Target="_blank" ImageUrl="images/Wesconlogo.gif" Width="85" Height="85" ToolTip="Sign up"></asp:HyperLink>
+                    </div>
+                    <div class="hr1"></div>
+                </div><!-- side_nav -->
+                
+                
+				<div id="homemain_content">
+                    <asp:contentplaceholder id="MainContent" runat="server">
+                      <!-- Page-specific content will go here... -->
+                    </asp:contentplaceholder>
+				</div><!-- homemain_content -->
+				
+				
+            </div><!-- main_container -->
+            
+            
+            <div id="footer"> 
+                <p class="footer_text"><asp:Label ID="lblCopyright" runat="server" EnableViewState="false"></asp:Label></p>
+                <p class="footer_links">
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="http://www.kreativedesigns.com" Target="_blank" CssClass="footer">Site Design By: Kreativedesigns.com</asp:HyperLink></p>
+            </div>
+        </div><!-- container -->
+    </div><!-- container_full -->
+    
+    <asp:ObjectDataSource ID="WebContentDataSource4" runat="server"
+        SelectMethod="GetWebContentByPageName" TypeName="WebContentBLL" EnableViewState="false">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="HomePage - Sidebar 1" Name="PageName" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    
+    <asp:ObjectDataSource ID="WebContentDataSource5" runat="server"
+        SelectMethod="GetWebContentByPageName" TypeName="WebContentBLL" EnableViewState="false">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="HomePage - Sidebar 2" Name="PageName" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    </form>
+</body>
+</html>
